@@ -25,10 +25,10 @@
 				<td><?=  $data['judul']?></td>
 				<td><?=  $data['nama_kategori']?></td>
 				<td>
-					<a href="?url=edit_kategorirelasi&id_kategoribuku=<?= $data ['id_kategoribuku']?>" class = 'btn btn-outline-warning'>EDIT</a>
+					<a href="?url=edit_relasi&id_kategoribuku=<?= $data ['id_kategoribuku']?>" class = 'btn btn-outline-warning'>EDIT</a>
 				</td>
 				<td>
-					<a onclick =" return confirm ('Apakah Anda yakin ingin menghapus Data ?')" href="?url=hapus_kategorirelasi&id_kategoribuku=<?= $data ['id_kategoribuku']?>" class = 'btn btn-outline-danger'>HAPUS</a>
+					<a onclick =" return confirm ('Apakah Anda yakin ingin menghapus Data ?')" href="?url=hapus_relasi&id_kategoribuku=<?= $data ['id_kategoribuku']?>" class = 'btn btn-outline-danger'>HAPUS</a>
 				</td>
 			</tr>	
 		<?php } ?>
