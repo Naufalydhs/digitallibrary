@@ -14,6 +14,7 @@
 		<td>Tanggal Pinjam</td>
 		<td>Tanggal Pengembalian</td>
 		<td>Status</td>
+		<td>Aksi</td>
 	</tr>
 	</thead>
 	<tbody>
@@ -32,7 +33,16 @@
 				<td><?= $data['penerbit']?></td>
 				<td><?= $data['tanggalpeminjaman']?></td>
 				<td><?= $data['tanggalpengembalian']?></td>
-				<td><?= $data['statuspeminjaman']?></td>
+				<td><?php 
+					$statuspinjam = $data['statuspeminjaman']; 
+					if ($statuspinjam =="kembali"){
+						echo"<span class='badge text-bg-success'>Dikembalikan</span>";
+					}else { ?>
+						<span class='text-danger'>Dipinjam</span>
+					<?php } ?>
+					
+				</td>
+				<td><a class = 'btn btn-primary' href="?url=ulasan&id_buku=<?= $data['id_buku'];?>">Ulasan</a></td>
 			</tr>	
 		<?php } ?>
 	</tbody>
