@@ -7,6 +7,7 @@
 	<thead>
 	<tr class="fw-bold">
 		<td>No</td>
+		<td>Gambar</td>
 		<td>Judul Buku</td>
 		<td>Penulis</td>
 		<td>Penerbit</td>
@@ -23,6 +24,7 @@
 		foreach ($query as $data) { ?>
 			<tr>
 				<td><?= $no++; ?></td>
+				<td><img src="../asset/<?php echo $data["gambar"]; ?>" width = 200 title="<?php echo $data['gambar']; ?>"></td></td>
 				<td><?=  $data['judul']?></td>
 				<td><?=   $data['penulis']?></td>
 				<td><?=   $data['penerbit']?></td>

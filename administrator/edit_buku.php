@@ -10,7 +10,12 @@ $data = mysqli_fetch_array ($query);
 <h5>Halaman Edit Data buku</h5>
 <a href="?url=data_buku" class="btn btn-outline-primary">Kembali</a>
 <hr>
-<form method="post" action="?url=simpan_edit_buku&id_buku=<?=$data['id_buku'];?>">
+<form method="post" enctype="multipart/form-data" action="?url=simpan_edit_buku&id_buku=<?=$data['id_buku'];?>">
+	<div class="form-group mb-2">
+		<label>Gambar Buku</label>
+		<div class="mb-2"><img src="../asset/<?php echo $data["gambar"]; ?>" width = 200 title="<?php echo $data['gambar']; ?>"></div>
+		<input value= "<?= $data['gambar'] ?>" type="file" name="gambar" class="form-control">
+	</div>
 	<div class="form-group mb-2">
 		<label>Judul</label>
 		<input value = "<?=$data['judul']?>" type="text" name="judul"  class="form-control" required>

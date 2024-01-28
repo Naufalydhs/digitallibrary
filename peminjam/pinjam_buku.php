@@ -10,7 +10,7 @@
 			?>
 		<div class="card col-3 m-1">
 			<form method="post" action="?url=tanggal_pinjam&id_buku=<?=$data_buku['id_buku'];?>">
-				<img src="..." class="card-img-top" alt="...">
+				<img src="../asset/<?php echo $data_buku["gambar"]; ?>" width = 200 title="<?php echo $data_buku['gambar']; ?>">
 				  <div class="card-body">
 				    <h5 class="card-title"><?=$data_buku['judul'];?></h5>
 				    <p class="card-text">Penulis : <?=$data_buku['penulis'];?></p>
