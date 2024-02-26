@@ -3,7 +3,7 @@
 </a>
 
 <hr>
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered table align-middle">
 	<thead>
 	<tr class="fw-bold">
 		<td>No</td>
@@ -25,7 +25,7 @@
 		foreach ($query as $data) { ?>
 			<tr>
 				<td><?= $no++; ?></td>
-				<td><img src="../asset/<?php echo $data["gambar"]; ?>" width = 200 title="<?php echo $data['gambar']; ?>"></td></td>
+				<td><img src="../asset/<?php echo $data["gambar"]; ?>" width = 100 title="<?php echo $data['gambar']; ?>"></td></td>
 				<td><?=  $data['judul']?></td>
 				<td><?=   $data['penulis']?></td>
 				<td><?=   $data['penerbit']?></td>

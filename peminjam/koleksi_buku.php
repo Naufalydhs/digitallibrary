@@ -3,7 +3,7 @@
 </a>
 
 <hr>
-<table class="table table-striped table-bordered">
+<table class="table table-striped table-bordered table align-middle">
 	<thead>
 	<tr class="fw-bold">
 		<td>No</td>
@@ -11,7 +11,7 @@
 		<td>Judul Buku</td>
 		<td>Penulis</td>
 		<td>Penerbit</td>
-		<td>Hapus</td>
+		<td>Aksi</td>
 	</tr>
 	</thead>
 	<tbody>
@@ -24,11 +24,12 @@
 		foreach ($query as $data) { ?>
 			<tr>
 				<td><?= $no++; ?></td>
-				<td><img src="../asset/<?php echo $data["gambar"]; ?>" width = 200 title="<?php echo $data['gambar']; ?>"></td></td>
+				<td><img src="../asset/<?php echo $data["gambar"]; ?>" width = 100 title="<?php echo $data['gambar']; ?>"></td></td>
 				<td><?=  $data['judul']?></td>
 				<td><?=   $data['penulis']?></td>
 				<td><?=   $data['penerbit']?></td>
 				<td>
+					<a  href="?url=tanggal_pinjam&id_buku=<?= $data ['id_buku']?>" class = 'btn btn-outline-success'>PINJAM</a>
 					<a onclick =" return confirm ('Apakah Anda yakin ingin menghapus Data ?')" href="?url=hapus_koleksi&id_koleksi=<?= $data ['id_koleksi']?>" class = 'btn btn-outline-danger'>HAPUS</a>
 				</td>
 			</tr>	

@@ -10,6 +10,7 @@ if(file_exists('../asset/'.$gambar))
 	{
 		unlink('../asset/'.$gambar) ;
 	}
+	
 $sql = "DELETE FROM buku Where id_buku = '$id_buku'";
 $query	= mysqli_query($koneksi,$sql);
 

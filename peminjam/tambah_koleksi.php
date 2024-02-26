@@ -1,27 +1,32 @@
-<h5>Halaman Koleksi Buku</h5>
-<a href="?url=koleksi_buku" class="btn btn-outline-dark">Kembali
-</a>
-<div class="container text-center">
-	<div class="row justify-content-around">
-		<?php
-			include "../koneksi.php";
-			$buku = mysqli_query ($koneksi, "SELECT*FROM buku ORDER BY judul ASC");
-			foreach ($buku as $data_buku) {
-			?>
-		<div class="card col-3 m-1">
-			<form method="post" action="?url=simpan_tambah_koleksi&id_buku=<?=$data_buku['id_buku'];?>">
-				<img src="..." class="card-img-top" alt="...">
-				  <div class="card-body">
-				    <h5 class="card-title"><?=$data_buku['judul'];?></h5>
-				    <p class="card-text">Penulis : <?=$data_buku['penulis'];?></p>
-				    <p class="card-text">Penerbit : <?=$data_buku['penerbit'];?></p>
-				    <p class="card-text">Tahun Terbit : <?=$data_buku['tahun'];?></p>
-				    <button type="submit" class="btn btn-outline-success">Tambah Koleksi</button>
-				    
-				  </div>
-			</form>
-		</div>
-		<?php } ?>
+<h5>Halaman Tambah Koleksi Buku</h5>
+<form action="?url=tambah_koleksi" method="GET">
+<div class="row justify-content-between">
+	<div class="col">
+		<a href="?url=koleksi_buku" class="btn btn-outline-secondary">Kembali</a>
 	</div>
-	
+	<div class="col-2 form-group mb-2">
+		
+		<select name="pilih" id="pilih" class= "form-control" onchange="buku()" >
+				<option value="">Kategori</option>
+				<?php 
+				include "../koneksi.php";
+				$kategori = mysqli_query ($koneksi, "SELECT*FROM kategoribuku ORDER BY nama_kategori ASC");
+				foreach ($kategori as $data_kategori) {
+				?>
+				<option value="<?=$data_kategori['id_kategori']?>"><?=$data_kategori['nama_kategori'];?></option>
+				<?php 
+				
+				} ?>
+
+			</select>
+	</div>
 </div>
+</form>
+ <div id='buku'></div> 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+	function buku() {
+	var pilih = $('#pilih').val();
+	$('#buku').load("panggil.php?pilih="+pilih+"");
+			}
+</script>
